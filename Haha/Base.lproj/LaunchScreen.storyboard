@@ -20,8 +20,8 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hahaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-Fy-aM0">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Qow-iy-FQS"/>
-                                    <constraint firstAttribute="width" constant="200" id="wFy-ky-5jZ"/>
+                                    <constraint firstAttribute="height" constant="287" id="Qow-iy-FQS"/>
+                                    <constraint firstAttribute="width" constant="287" id="wFy-ky-5jZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hahaLogo" width="512" height="512"/>
+        <image name="hahaLogo" width="768" height="769"/>
     </resources>
 </document>
