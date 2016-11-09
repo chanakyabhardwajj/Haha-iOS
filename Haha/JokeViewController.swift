@@ -17,7 +17,7 @@ class JokeViewController: UIViewController {
         if let j = joke {
             let textToShare = j.title + j.text
             
-            let objectsToShare = [textToShare]
+            let objectsToShare = [textToShare, URL(string: j.urlString)] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
             activityVC.popoverPresentationController?.barButtonItem = sender
@@ -28,7 +28,7 @@ class JokeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        jokeView.textContainerInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        jokeView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
 
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7

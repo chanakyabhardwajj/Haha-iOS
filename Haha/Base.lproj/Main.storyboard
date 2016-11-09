@@ -76,7 +76,7 @@
         <!--Title-->
         <scene sceneID="dZC-Q5-noR">
             <objects>
-                <viewController id="Rvx-4m-fnm" customClass="JokeViewController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Rvx-4m-fnm" customClass="JokeViewController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hHk-J2-UOJ"/>
                         <viewControllerLayoutGuide type="bottom" id="CcG-s2-ZK7"/>
@@ -101,12 +101,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" id="7Xk-QC-H89"/>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="ClV-pp-1JY"/>
-                            <constraint firstAttribute="bottom" secondItem="cbx-PE-IJK" secondAttribute="bottom" id="GEG-zH-dSK"/>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="iTE-rN-Fr8"/>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="ltR-NZ-cwU"/>
-                            <constraint firstAttribute="trailing" secondItem="cbx-PE-IJK" secondAttribute="trailing" constant="16" id="tXK-av-MEy"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="051-Xm-WHR"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="f22-Ad-1Sk"/>
+                            <constraint firstAttribute="trailing" secondItem="cbx-PE-IJK" secondAttribute="trailing" constant="16" id="ieF-ne-RSY"/>
+                            <constraint firstAttribute="bottom" secondItem="cbx-PE-IJK" secondAttribute="bottom" constant="20" id="lId-go-WHh"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" constant="20" id="pvB-BT-Bn0"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -124,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM4-JI-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.625" y="-127.8169014084507"/>
+            <point key="canvasLocation" x="1519.2" y="-128.18590704647679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yyA-bn-m2J">
