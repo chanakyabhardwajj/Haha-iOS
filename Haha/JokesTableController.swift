@@ -16,6 +16,10 @@ class Joke {
     var urlString: String = ""
 }
 
+enum JokesCategory : String {
+    case Hot = "hot", Best = "top"
+}
+
 class JokesTableController: UITableViewController, ErrorCellDelegate {
     struct TableCellIdentifiers {
         static let JokeCell: String = "JokeCell"
@@ -28,12 +32,24 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
     var hasFailed: Bool = false
     var lastJokeName: String = ""
     let jokeLimit = 25
-    let apiUrl = "https://www.reddit.com/r/jokes+DirtyJokes+MeanJokes+DadJokes+cleanjokes/hot/.json?"
+    var jokesCategory = JokesCategory.Hot
     
     @IBAction func loadMore(_ sender: UIBarButtonItem) {
         fetchJokes(false)
+        let i = NSIndexPath(row: jokes.count, section: 0)
+        tableView.scrollToRow(at: i as IndexPath, at: .bottom, animated: true)
     }
 
+    @IBAction func jokesCategoryChanged(_ sender: AnyObject) {
+        if(jokesCategorySegmentedControl.selectedSegmentIndex == 0) {
+            jokesCategory = JokesCategory.Hot
+        } else if(jokesCategorySegmentedControl.selectedSegmentIndex == 1) {
+            jokesCategory = JokesCategory.Best
+        }
+        fetchJokes(true)
+    }
+    
+    @IBOutlet weak var jokesCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var jokesTable: UITableView!
 
     @IBAction func refresh(_ sender: UIBarButtonItem) {
@@ -61,8 +77,10 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
         if segue.identifier == "ShowJoke" {
             let jokeViewController = segue.destination as! JokeViewController
             let indexPath = sender as! IndexPath
-            let joke = jokes[indexPath.row]
-            jokeViewController.joke = joke
+            if indexPath.row < jokes.count {
+                let joke = jokes[indexPath.row]
+                jokeViewController.joke = joke
+            }
         }
     }
 }
@@ -106,11 +124,6 @@ extension JokesTableController {
                 cell = JokeCell(style: .default, reuseIdentifier: cellIdentifier)
             }
 
-            if (jokes.count - index < 10 && !isFetching && !hasFailed) {
-                print("Only 10 more jokes left, fetching more")
-                fetchJokes(false)
-            }
-            
             let joke = jokes[index]
             cell.jokeText!.text = joke.title
             return cell
@@ -135,13 +148,16 @@ extension JokesTableController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "ShowJoke", sender: indexPath)
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell is JokeCell {
+            performSegue(withIdentifier: "ShowJoke", sender: indexPath)
+        }        
     }
 }
 
+
 //Extension for all Jokes Data Model related code
 extension JokesTableController {
-
     func parse(json data: Data) -> [String: Any]? {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -181,8 +197,16 @@ extension JokesTableController {
         return jokes
     }
 
+    func buildURLForJokes() -> URL {
+        let apiUrl = "https://www.reddit.com/r/jokes+DirtyJokes+MeanJokes+DadJokes+cleanjokes/\(jokesCategory.rawValue)/.json?limit=\(String(jokeLimit))&after=\(lastJokeName)"
+        return URL(string: apiUrl)!
+    }
     
     func fetchJokes(_ refresh: Bool) {
+        if (isFetching) {
+            return
+        }
+
         hasFailed = false
         isFetching = true
         
@@ -191,11 +215,10 @@ extension JokesTableController {
             lastJokeName = ""
         }
         jokesTable.reloadData()
-        
-        let urlString = apiUrl + "limit=\(String(jokeLimit))" + "&after=\(lastJokeName)"
-        let url = URL(string: urlString)
+
+
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!, completionHandler: {
+        let dataTask = session.dataTask(with: buildURLForJokes(), completionHandler: {
             data, response, error in
             
             if let error = error {
@@ -205,14 +228,10 @@ extension JokesTableController {
                 httpResponse.statusCode == 200 {
                 let parsedJSON = self.parse(json: data!)
                 let parsedJokes = self.parse(dictionary: parsedJSON!)
-                
-                print("Success! Fetched : \(String(parsedJokes!.count)) jokes, shown below")
-                
+
                 self.hasFailed = false
                 for p in parsedJokes! {
-                    print(p.name)
                     if self.jokes.contains(where: { $0.name == p.name }) {
-                        print("duplicate joke skipped" + p.name)
                         continue
                     } else {
                         self.jokes.append(p)

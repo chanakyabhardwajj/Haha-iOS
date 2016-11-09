@@ -13,19 +13,32 @@ class JokeViewController: UIViewController {
 
     @IBOutlet weak var jokeView: UITextView!
     
-    
+    @IBAction func shareJoke(_ sender: UIBarButtonItem) {
+        if let j = joke {
+            let textToShare = j.title + j.text
+            
+            let objectsToShare = [textToShare]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.barButtonItem = sender
+            present(activityVC, animated: true, completion: nil)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        jokeView.textContainerInset = UIEdgeInsetsMake(20, 0, 0, 0)
+
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7
 
         let textAttributes: [String : Any] = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 17, weight: UIFontWeightLight),
+            NSFontAttributeName: UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular),
             NSParagraphStyleAttributeName: paragraphStyle
         ]
 
-        let titleAttribute = [ NSFontAttributeName: UIFont.systemFont(ofSize: 20, weight: UIFontWeightLight) ]
+        let titleAttribute = [ NSFontAttributeName: UIFont.systemFont(ofSize: 22, weight: UIFontWeightSemibold) ]
 
         if let j = joke {
             let jokeTitle = NSMutableAttributedString(string: j.title, attributes: titleAttribute)

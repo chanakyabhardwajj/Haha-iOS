@@ -3,11 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HaHa-->
+        <!--Jokes Table Controller-->
         <scene sceneID="XRd-Mv-6tL">
             <objects>
                 <tableViewController id="REj-m7-v8o" customClass="JokesTableController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,16 +14,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JokeCell" textLabel="jVN-3L-Eb1" style="IBUITableViewCellStyleDefault" id="n9J-1U-FUq">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n9J-1U-FUq" id="rDO-sR-6Yr">
-                                    <frame key="frameInset" width="320" height="43.5"/>
+                                    <frame key="frameInset" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jVN-3L-Eb1">
-                                            <frame key="frameInset" minX="15" width="290" height="43.5"/>
+                                            <frame key="frameInset" minX="15" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -39,12 +39,24 @@
                             <outlet property="delegate" destination="REj-m7-v8o" id="P8A-pI-eLj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="HaHa" id="LuS-Yz-e3l">
+                    <navigationItem key="navigationItem" id="LuS-Yz-e3l">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="More" id="LV6-WB-86c">
                             <connections>
                                 <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
                             </connections>
                         </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DID-cr-8av">
+                            <rect key="frame" x="54" y="7" width="215" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Hot"/>
+                                <segment title="Week's Best"/>
+                            </segments>
+                            <connections>
+                                <action selector="jokesCategoryChanged:" destination="REj-m7-v8o" eventType="valueChanged" id="Syx-bo-SQu"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="v3M-FG-duh">
                             <connections>
                                 <action selector="refresh:" destination="REj-m7-v8o" id="kMX-S7-iy8"/>
@@ -52,15 +64,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="jokesCategorySegmentedControl" destination="DID-cr-8av" id="x7i-6j-CrN"/>
                         <outlet property="jokesTable" destination="Dsh-XM-Rft" id="Nzl-iy-QUU"/>
-                        <segue destination="Rvx-4m-fnm" kind="show" identifier="ShowJoke" id="8kU-Ap-2Jf"/>
+                        <segue destination="Rvx-4m-fnm" kind="show" identifier="ShowJoke" id="Pmb-wi-UjB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4N-8T-kms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="-127"/>
+            <point key="canvasLocation" x="693.75" y="-128.87323943661971"/>
         </scene>
-        <!--Joke View Controller-->
+        <!--Title-->
         <scene sceneID="dZC-Q5-noR">
             <objects>
                 <viewController id="Rvx-4m-fnm" customClass="JokeViewController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,39 +85,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-hv-sKp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-PE-IJK">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Git is a pretty awesome tool but it takes a while to get familiar with. Unfortunately, Xcode’s support for things like merges is still spotty and you’re better off using the command line for the more advanced commands. It’s well worth learning! 
-You can find the files for the app up to this point under 05 - URLSession in the tutorial’s Source Code folder. 
-</string>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Verdana"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WaN-hv-sKp" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leadingMargin" id="4NZ-ga-Aau"/>
-                            <constraint firstItem="WaN-hv-sKp" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" id="ofg-HW-PUB"/>
-                            <constraint firstItem="CcG-s2-ZK7" firstAttribute="top" secondItem="WaN-hv-sKp" secondAttribute="bottom" id="vjq-4g-4oQ"/>
-                            <constraint firstItem="WaN-hv-sKp" firstAttribute="trailing" secondItem="B03-mP-Tvt" secondAttribute="trailingMargin" id="zmf-cB-HPA"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" id="7Xk-QC-H89"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="ClV-pp-1JY"/>
+                            <constraint firstAttribute="bottom" secondItem="cbx-PE-IJK" secondAttribute="bottom" id="GEG-zH-dSK"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="iTE-rN-Fr8"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="ltR-NZ-cwU"/>
+                            <constraint firstAttribute="trailing" secondItem="cbx-PE-IJK" secondAttribute="trailing" constant="16" id="tXK-av-MEy"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="eKJ-ld-rc5">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="QnP-kH-4B7">
+                            <connections>
+                                <action selector="shareJoke:" destination="Rvx-4m-fnm" id="l95-DC-92r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="jokeView" destination="WaN-hv-sKp" id="8Wp-Iy-Ceb"/>
+                        <outlet property="jokeView" destination="cbx-PE-IJK" id="dtV-yg-3Wv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM4-JI-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.8" y="-127.28635682158921"/>
+            <point key="canvasLocation" x="1520.625" y="-127.8169014084507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yyA-bn-m2J">
