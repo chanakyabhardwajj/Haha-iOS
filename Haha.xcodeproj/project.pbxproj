@@ -114,7 +114,7 @@
 				TargetAttributes = {
 					20BB1EC41DD1A07000EF064E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T79RP3VTW4;
+						DevelopmentTeam = LVNZHB2TCY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -286,12 +286,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = T79RP3VTW4;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chanakya Bhardwaj (FTYFE9R7RK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LVNZHB2TCY;
 				INFOPLIST_FILE = Haha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.Haha;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.HahaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,12 +303,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = T79RP3VTW4;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chanakya Bhardwaj (FTYFE9R7RK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LVNZHB2TCY;
 				INFOPLIST_FILE = Haha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.Haha;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.HahaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
