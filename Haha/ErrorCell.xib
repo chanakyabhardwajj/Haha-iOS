@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QKm-tC-s4g" customClass="ErrorCell" customModule="Haha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKm-tC-s4g" id="src-4V-Umm">
+                <frame key="frameInset" width="375" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! Failed to load the funny." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38U-w0-VSq">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="For-sk-FuC">
+                        <state key="normal" title="Try again"/>
+                        <connections>
+                            <action selector="tryAgain:" destination="QKm-tC-s4g" eventType="touchUpInside" id="VM9-cD-Qgb"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="For-sk-FuC" secondAttribute="bottom" id="3RL-5j-djl"/>
+                    <constraint firstItem="38U-w0-VSq" firstAttribute="leading" secondItem="src-4V-Umm" secondAttribute="leadingMargin" id="4oY-TR-lqT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="38U-w0-VSq" secondAttribute="trailing" id="86I-hk-6Yu"/>
+                    <constraint firstItem="38U-w0-VSq" firstAttribute="top" secondItem="src-4V-Umm" secondAttribute="topMargin" constant="8" id="ZdP-rD-HNo"/>
+                    <constraint firstItem="38U-w0-VSq" firstAttribute="centerX" secondItem="src-4V-Umm" secondAttribute="centerX" id="eNC-fp-Nkx"/>
+                    <constraint firstItem="For-sk-FuC" firstAttribute="leading" secondItem="src-4V-Umm" secondAttribute="leadingMargin" constant="148" id="iYo-to-reD"/>
+                    <constraint firstItem="For-sk-FuC" firstAttribute="centerX" secondItem="src-4V-Umm" secondAttribute="centerX" id="kxJ-lX-l1G"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="For-sk-FuC" secondAttribute="trailing" constant="148" id="nOU-N4-wjY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="6" y="-40"/>
+        </tableViewCell>
+    </objects>
+</document>

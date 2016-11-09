@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JokeCell" id="ama-KL-8Tj" customClass="JokeCell" customModule="Haha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ama-KL-8Tj" id="1uZ-HM-Ch7">
+                <frame key="frameInset" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-HJ-peL">
+                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="NDt-HJ-peL" secondAttribute="bottom" constant="8" id="4bo-bn-cpr"/>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="centerX" secondItem="1uZ-HM-Ch7" secondAttribute="centerX" id="JZw-SA-Dvz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NDt-HJ-peL" secondAttribute="trailing" constant="8" id="X96-Ms-Ng7"/>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="centerY" secondItem="1uZ-HM-Ch7" secondAttribute="centerY" id="nNJ-1Q-LTk"/>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="top" secondItem="1uZ-HM-Ch7" secondAttribute="topMargin" constant="8" id="rHA-a9-meX"/>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="leading" secondItem="1uZ-HM-Ch7" secondAttribute="leadingMargin" constant="8" id="sDW-hj-gBs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="jokeText" destination="NDt-HJ-peL" id="tzU-BV-5fe"/>
+            </connections>
+            <point key="canvasLocation" x="5.5" y="39"/>
+        </tableViewCell>
+    </objects>
+</document>
