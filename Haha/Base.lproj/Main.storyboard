@@ -41,9 +41,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="LuS-Yz-e3l">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="More" id="LV6-WB-86c">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="v3M-FG-duh">
                             <connections>
-                                <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
+                                <action selector="refresh:" destination="REj-m7-v8o" id="kMX-S7-iy8"/>
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DID-cr-8av">
@@ -57,9 +57,9 @@
                                 <action selector="jokesCategoryChanged:" destination="REj-m7-v8o" eventType="valueChanged" id="Syx-bo-SQu"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="v3M-FG-duh">
+                        <barButtonItem key="rightBarButtonItem" title="more" id="LV6-WB-86c">
                             <connections>
-                                <action selector="refresh:" destination="REj-m7-v8o" id="kMX-S7-iy8"/>
+                                <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
