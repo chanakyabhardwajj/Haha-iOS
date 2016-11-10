@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hahaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PDr-Fy-aM0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4l9-CJ-E8a">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="287" id="Qow-iy-FQS"/>
-                                    <constraint firstAttribute="width" constant="287" id="wFy-ky-5jZ"/>
+                                    <constraint firstAttribute="width" constant="240" id="rXH-io-e3l"/>
+                                    <constraint firstAttribute="height" constant="240" id="tzs-Nh-CzT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PDr-Fy-aM0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dky-jO-ilX"/>
-                            <constraint firstItem="PDr-Fy-aM0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rcu-tt-o5R"/>
+                            <constraint firstItem="4l9-CJ-E8a" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="86G-sV-lxB"/>
+                            <constraint firstItem="4l9-CJ-E8a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BPP-vQ-Od2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hahaLogo" width="768" height="769"/>
+        <image name="launchLogo" width="512" height="512"/>
     </resources>
 </document>
