@@ -18,6 +18,7 @@
 		20BB1EE11DD1C1CD00EF064E /* ErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BB1EE01DD1C1CD00EF064E /* ErrorCell.xib */; };
 		20BB1EE31DD1C29900EF064E /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB1EE21DD1C29900EF064E /* ErrorCell.swift */; };
 		20BB1EE51DD2004C00EF064E /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB1EE41DD2004C00EF064E /* JokeViewController.swift */; };
+		20D0C5291DD4E6AA0085E69C /* haha-logo-sketch.sketch in Resources */ = {isa = PBXBuildFile; fileRef = 20D0C5281DD4E6AA0085E69C /* haha-logo-sketch.sketch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		20BB1EE01DD1C1CD00EF064E /* ErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorCell.xib; sourceTree = "<group>"; };
 		20BB1EE21DD1C29900EF064E /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
 		20BB1EE41DD2004C00EF064E /* JokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
+		20D0C5281DD4E6AA0085E69C /* haha-logo-sketch.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "haha-logo-sketch.sketch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				20BB1EE01DD1C1CD00EF064E /* ErrorCell.xib */,
 				20BB1EE21DD1C29900EF064E /* ErrorCell.swift */,
 				20BB1EDE1DD1BC3B00EF064E /* LoadingCell.xib */,
+				20D0C5281DD4E6AA0085E69C /* haha-logo-sketch.sketch */,
 				20BB1ECF1DD1A07000EF064E /* Assets.xcassets */,
 				20BB1ED11DD1A07000EF064E /* LaunchScreen.storyboard */,
 				20BB1ED41DD1A07000EF064E /* Info.plist */,
@@ -145,6 +148,7 @@
 				20BB1ED31DD1A07000EF064E /* LaunchScreen.storyboard in Resources */,
 				20BB1ED01DD1A07000EF064E /* Assets.xcassets in Resources */,
 				20BB1EDB1DD1B69400EF064E /* JokeCell.xib in Resources */,
+				20D0C5291DD4E6AA0085E69C /* haha-logo-sketch.sketch in Resources */,
 				20BB1EDF1DD1BC3B00EF064E /* LoadingCell.xib in Resources */,
 				20BB1EE11DD1C1CD00EF064E /* ErrorCell.xib in Resources */,
 				20BB1ECE1DD1A07000EF064E /* Main.storyboard in Resources */,
@@ -294,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.HahaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -311,7 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chanakyabhardwaj.HahaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
