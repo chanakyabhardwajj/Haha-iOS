@@ -15,10 +15,12 @@
                 <frame key="frameInset" width="375" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="42222" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPv-9C-sbv">
-                        <frame key="frameInset" minX="8" minY="15" width="50" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42222" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPv-9C-sbv">
                         <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="UeD-Pe-aNV"/>
+                            <constraint firstAttribute="width" constant="50" id="YMX-pD-XWz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -28,21 +30,29 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This could have been a very very long label.This could have been a very very long label." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-HJ-peL">
-                        <frame key="frameInset" minX="66" minY="15" width="301" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This could have been a very very long label.This could have been a very very long label." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-HJ-peL">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="oQl-lo-aMD"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="top" secondItem="1uZ-HM-Ch7" secondAttribute="top" constant="15" id="37E-7A-rZr"/>
+                    <constraint firstItem="yPv-9C-sbv" firstAttribute="top" secondItem="1uZ-HM-Ch7" secondAttribute="top" constant="15" id="FQp-Ya-9gn"/>
+                    <constraint firstItem="NDt-HJ-peL" firstAttribute="leading" secondItem="yPv-9C-sbv" secondAttribute="trailing" constant="8" id="Jn3-uI-sva"/>
+                    <constraint firstItem="yPv-9C-sbv" firstAttribute="leading" secondItem="1uZ-HM-Ch7" secondAttribute="leading" constant="8" id="dM3-eK-tg6"/>
+                    <constraint firstAttribute="trailing" secondItem="NDt-HJ-peL" secondAttribute="trailing" constant="8" id="gQR-Uv-cmh"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="jokeScore" destination="yPv-9C-sbv" id="vRt-M2-oFb"/>
                 <outlet property="jokeText" destination="NDt-HJ-peL" id="tzU-BV-5fe"/>
             </connections>
-            <point key="canvasLocation" x="5.5" y="39"/>
+            <point key="canvasLocation" x="-83.5" y="31"/>
         </tableViewCell>
     </objects>
 </document>

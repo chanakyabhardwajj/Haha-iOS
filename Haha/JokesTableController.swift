@@ -30,10 +30,15 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
 
     var jokes = [Joke]()
     var isFetching: Bool = false
+    var currentFetchTask: URLSessionTask?
     var hasFailed: Bool = false
     var lastJokeName: String = ""
     let jokeLimit = 25
     var jokesCategory = JokesCategory.Hot
+    
+    @IBAction func adultContentSwitchToggled(_ sender: UISwitch) {
+        fetchJokes(true)
+    }
     
     @IBAction func loadMore(_ sender: UIBarButtonItem) {
         fetchJokes(false)
@@ -50,6 +55,7 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
         fetchJokes(true)
     }
     
+    @IBOutlet weak var adultContentSwitch: UISwitch!
     @IBOutlet weak var jokesCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var jokesTable: UITableView!
 
@@ -59,6 +65,14 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
 
     func tryAgain() {
         fetchJokes(false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
@@ -201,13 +215,21 @@ extension JokesTableController {
     }
 
     func buildURLForJokes() -> URL {
-        let apiUrl = "https://www.reddit.com/r/jokes+DirtyJokes+MeanJokes+DadJokes+cleanjokes/\(jokesCategory.rawValue)/.json?limit=\(String(jokeLimit))&after=\(lastJokeName)"
+        var subReddits = "jokes+DadJokes+cleanjokes"
+        if adultContentSwitch.isOn {
+            subReddits += "+DirtyJokes+MeanJokes"
+        }
+        
+        let apiUrl = "https://www.reddit.com/r/\(subReddits)/\(jokesCategory.rawValue)/.json?limit=\(String(jokeLimit))&after=\(lastJokeName)"
+
         return URL(string: apiUrl)!
     }
     
     func fetchJokes(_ refresh: Bool) {
         if (isFetching) {
-            return
+            if let task = currentFetchTask {
+                task.cancel()
+            }
         }
 
         hasFailed = false
@@ -221,12 +243,17 @@ extension JokesTableController {
 
 
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: buildURLForJokes(), completionHandler: {
+        currentFetchTask = session.dataTask(with: buildURLForJokes(), completionHandler: {
             data, response, error in
             
-            if let error = error {
-                print("Failure! \(error)")
-                self.hasFailed = true
+            if let error = error as? NSError {
+                if error.code == NSURLErrorCancelled {
+                    print("Cancelled! \(error)")
+                } else {
+                    print("Failure! \(error)")
+                    self.hasFailed = true
+                }
+                return
             } else if let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200 {
                 let parsedJSON = self.parse(json: data!)
@@ -251,7 +278,7 @@ extension JokesTableController {
                 self.jokesTable.reloadData()
             }
         })
-        dataTask.resume()
+        currentFetchTask?.resume()
     }
 
 }
