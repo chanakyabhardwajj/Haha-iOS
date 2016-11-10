@@ -44,10 +44,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TJo-m8-zm7"/>
                         <barButtonItem title="Adult Content" style="plain" id="Sk9-2n-2hH"/>
                         <barButtonItem style="plain" id="cBB-BG-tAA">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yGC-8t-oRB">
-                                <rect key="frame" x="132" y="7" width="51" height="31"/>
+                                <rect key="frame" x="310" y="7" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="adultContentSwitchToggled:" destination="REj-m7-v8o" eventType="valueChanged" id="G2j-1M-URr"/>
