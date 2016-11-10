@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42222" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPv-9C-sbv">
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.71764705882352942" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="X3w-IH-9WK"/>
                             <constraint firstAttribute="width" constant="50" id="y1q-nU-7da"/>
@@ -36,7 +36,6 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.98943275213241577" blue="0.91842091083526611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="NDt-HJ-peL" firstAttribute="top" secondItem="1uZ-HM-Ch7" secondAttribute="top" constant="8" id="0c8-xw-63f"/>
                     <constraint firstAttribute="bottom" secondItem="yPv-9C-sbv" secondAttribute="bottom" constant="14" id="DlM-Oq-7CA"/>
@@ -47,7 +46,7 @@
                     <constraint firstItem="yPv-9C-sbv" firstAttribute="top" secondItem="1uZ-HM-Ch7" secondAttribute="top" constant="15" id="hov-xl-ce9"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="jokeScore" destination="yPv-9C-sbv" id="vRt-M2-oFb"/>
                 <outlet property="jokeText" destination="NDt-HJ-peL" id="tzU-BV-5fe"/>

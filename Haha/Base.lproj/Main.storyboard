@@ -13,8 +13,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dsh-XM-Rft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="5dK-CF-ekV">
                             <rect key="frame" x="0.0" y="136" width="375" height="44"/>
@@ -47,7 +46,6 @@
                     <navigationItem key="navigationItem" id="LuS-Yz-e3l">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="v3M-FG-duh">
-                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="refresh:" destination="REj-m7-v8o" id="kMX-S7-iy8"/>
                             </connections>
@@ -59,13 +57,12 @@
                                 <segment title="Hot Now"/>
                                 <segment title="Week's Best"/>
                             </segments>
-                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0" green="0.47934520244598389" blue="0.99908632040023804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="jokesCategoryChanged:" destination="REj-m7-v8o" eventType="valueChanged" id="Syx-bo-SQu"/>
                             </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="more" id="LV6-WB-86c">
-                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
                             </connections>
@@ -106,8 +103,7 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="051-Xm-WHR"/>
                             <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="f22-Ad-1Sk"/>
@@ -118,8 +114,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eKJ-ld-rc5">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="QnP-kH-4B7">
-                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="QnP-kH-4B7">
                             <connections>
                                 <action selector="shareJoke:" destination="Rvx-4m-fnm" id="l95-DC-92r"/>
                             </connections>
