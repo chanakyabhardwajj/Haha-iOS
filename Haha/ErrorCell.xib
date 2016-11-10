@@ -22,24 +22,30 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="For-sk-FuC">
-                        <state key="normal" title="Try again"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Try again">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="tryAgain:" destination="QKm-tC-s4g" eventType="touchUpInside" id="VM9-cD-Qgb"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="For-sk-FuC" secondAttribute="bottom" id="3RL-5j-djl"/>
                     <constraint firstItem="38U-w0-VSq" firstAttribute="leading" secondItem="src-4V-Umm" secondAttribute="leadingMargin" id="4oY-TR-lqT"/>
                     <constraint firstAttribute="trailingMargin" secondItem="38U-w0-VSq" secondAttribute="trailing" id="86I-hk-6Yu"/>
+                    <constraint firstAttribute="trailing" secondItem="For-sk-FuC" secondAttribute="trailing" constant="135" id="8AH-Z9-0lE"/>
+                    <constraint firstItem="For-sk-FuC" firstAttribute="leading" secondItem="src-4V-Umm" secondAttribute="leading" constant="134" id="9RA-pR-aJs"/>
                     <constraint firstItem="38U-w0-VSq" firstAttribute="top" secondItem="src-4V-Umm" secondAttribute="topMargin" constant="6" id="ZdP-rD-HNo"/>
                     <constraint firstItem="38U-w0-VSq" firstAttribute="centerX" secondItem="src-4V-Umm" secondAttribute="centerX" id="eNC-fp-Nkx"/>
-                    <constraint firstItem="For-sk-FuC" firstAttribute="leading" secondItem="src-4V-Umm" secondAttribute="leadingMargin" constant="148" id="iYo-to-reD"/>
-                    <constraint firstItem="For-sk-FuC" firstAttribute="centerX" secondItem="src-4V-Umm" secondAttribute="centerX" id="kxJ-lX-l1G"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="For-sk-FuC" secondAttribute="trailing" constant="148" id="nOU-N4-wjY"/>
+                    <constraint firstItem="For-sk-FuC" firstAttribute="centerX" secondItem="src-4V-Umm" secondAttribute="centerX" id="nhU-vs-d5O"/>
+                    <constraint firstAttribute="bottom" secondItem="For-sk-FuC" secondAttribute="bottom" constant="10" id="oqG-Mu-41N"/>
+                    <constraint firstItem="For-sk-FuC" firstAttribute="top" secondItem="38U-w0-VSq" secondAttribute="bottom" constant="8" id="vue-fj-Vc3"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="6" y="-40"/>
+            <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="5.5" y="-40"/>
         </tableViewCell>
     </objects>
 </document>

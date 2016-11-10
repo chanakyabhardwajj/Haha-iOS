@@ -10,21 +10,26 @@
         <scene sceneID="XRd-Mv-6tL">
             <objects>
                 <tableViewController id="REj-m7-v8o" customClass="JokesTableController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dsh-XM-Rft">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dsh-XM-Rft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="5dK-CF-ekV">
+                            <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JokeCell" textLabel="jVN-3L-Eb1" style="IBUITableViewCellStyleDefault" id="n9J-1U-FUq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JokeCell" textLabel="jVN-3L-Eb1" style="IBUITableViewCellStyleDefault" id="n9J-1U-FUq">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n9J-1U-FUq" id="rDO-sR-6Yr">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jVN-3L-Eb1">
-                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -42,6 +47,7 @@
                     <navigationItem key="navigationItem" id="LuS-Yz-e3l">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="v3M-FG-duh">
+                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="refresh:" destination="REj-m7-v8o" id="kMX-S7-iy8"/>
                             </connections>
@@ -50,14 +56,16 @@
                             <rect key="frame" x="80" y="7" width="215" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Hot"/>
+                                <segment title="Hot Now"/>
                                 <segment title="Week's Best"/>
                             </segments>
+                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="jokesCategoryChanged:" destination="REj-m7-v8o" eventType="valueChanged" id="Syx-bo-SQu"/>
                             </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="more" id="LV6-WB-86c">
+                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
                             </connections>
@@ -73,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="693.75" y="-128.87323943661971"/>
         </scene>
-        <!--Title-->
+        <!--Joke View Controller-->
         <scene sceneID="dZC-Q5-noR">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Rvx-4m-fnm" customClass="JokeViewController" customModule="Haha" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +94,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-PE-IJK">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -99,7 +106,8 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="051-Xm-WHR"/>
                             <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="f22-Ad-1Sk"/>
@@ -109,8 +117,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="eKJ-ld-rc5">
+                    <navigationItem key="navigationItem" id="eKJ-ld-rc5">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="QnP-kH-4B7">
+                            <color key="tintColor" red="0.98431372549999996" green="0.71764705880000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="shareJoke:" destination="Rvx-4m-fnm" id="l95-DC-92r"/>
                             </connections>

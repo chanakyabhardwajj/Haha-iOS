@@ -13,6 +13,7 @@ class Joke {
     var text: String = ""
     var id: String = ""
     var name: String = ""
+    var score: Int = -1
     var urlString: String = ""
 }
 
@@ -126,6 +127,7 @@ extension JokesTableController {
 
             let joke = jokes[index]
             cell.jokeText!.text = joke.title
+            cell.jokeScore!.text = String(joke.score)
             return cell
         } else if (index == jokes.count) {
             if isFetching {
@@ -191,6 +193,7 @@ extension JokesTableController {
             joke.urlString = jokeItem["url"] as! String
             joke.id = jokeItem["id"] as! String
             joke.name = jokeItem["name"] as! String
+            joke.score = jokeItem["score"] as! Int
             jokes.append(joke)
         }
         

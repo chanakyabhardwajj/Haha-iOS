@@ -10,6 +10,7 @@ import UIKit
 
 class JokeCell: UITableViewCell {
 
+    @IBOutlet weak var jokeScore: UILabel!
     @IBOutlet weak var jokeText: UILabel!
 
     override func awakeFromNib() {

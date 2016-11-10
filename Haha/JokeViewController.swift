@@ -16,10 +16,7 @@ class JokeViewController: UIViewController {
     @IBAction func shareJoke(_ sender: UIBarButtonItem) {
         if let j = joke {
             let textToShare = j.title + j.text
-            
-            let objectsToShare = [textToShare, URL(string: j.urlString)] as [Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
+            let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
             activityVC.popoverPresentationController?.barButtonItem = sender
             present(activityVC, animated: true, completion: nil)
         }

@@ -23,11 +23,10 @@
                                     <constraint firstAttribute="height" constant="21" id="wxu-Gs-5u7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Isu-Jz-bn5" secondAttribute="bottom" constant="20" id="CkP-vx-epO"/>
                             <constraint firstItem="Emg-2G-2Ob" firstAttribute="leading" secondItem="Isu-Jz-bn5" secondAttribute="trailing" constant="8" symbolic="YES" id="ZYn-SJ-Ooz"/>
@@ -44,6 +43,7 @@
                     <constraint firstItem="4Pl-XB-VG7" firstAttribute="centerX" secondItem="zg7-1n-Zwx" secondAttribute="centerX" constant="-5.5" id="mFh-Sw-G2f"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="0.98943275210000003" blue="0.91842091079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="7.5" y="-20"/>
         </tableViewCell>
     </objects>
