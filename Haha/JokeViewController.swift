@@ -46,9 +46,10 @@ class JokeViewController: UIViewController {
             
             jokeView!.attributedText = jokeTitle
         }
-        
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.jokeView.setContentOffset(CGPoint.zero, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
