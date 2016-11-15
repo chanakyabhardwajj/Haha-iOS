@@ -13,7 +13,10 @@ class JokeViewController: UIViewController {
     
     @IBAction func blockJoke(_ sender: UIButton) {
         let alert = UIAlertController(title: "Block this content?", message: "This joke will be removed and never shown again to you.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Block", style: UIAlertActionStyle.default, handler: goBack))
+        alert.addAction(UIAlertAction(title: "Block", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            self.performSegue(withIdentifier: "unwindToJokesTable", sender: self)
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -27,11 +30,6 @@ class JokeViewController: UIViewController {
             activityVC.popoverPresentationController?.barButtonItem = sender
             present(activityVC, animated: true, completion: nil)
         }
-    }
-
-    func goBack(action: UIAlertAction) -> Void {
-        print("go back")
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {

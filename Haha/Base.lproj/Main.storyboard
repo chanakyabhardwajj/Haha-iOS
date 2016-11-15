@@ -56,7 +56,7 @@
                         <barButtonItem title="Mature Content" style="plain" id="Sk9-2n-2hH"/>
                         <barButtonItem style="plain" id="cBB-BG-tAA">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yGC-8t-oRB">
-                                <rect key="frame" x="310" y="6.5" width="51" height="31"/>
+                                <rect key="frame" x="310" y="7" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="adultContentSwitchToggled:" destination="REj-m7-v8o" eventType="valueChanged" id="G2j-1M-URr"/>
@@ -128,7 +128,7 @@
                                     <color key="titleColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="blockJoke:" destination="Rvx-4m-fnm" eventType="touchUpInside" id="zrW-fI-Len"/>
+                                    <action selector="blockJoke:" destination="Rvx-4m-fnm" eventType="touchUpInside" id="CmU-rV-QIW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,9 +157,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="jokeView" destination="cbx-PE-IJK" id="dtV-yg-3Wv"/>
+                        <segue destination="5Bw-Em-LXY" kind="unwind" identifier="unwindToJokesTable" unwindAction="unwindToJokesTableWithSegue:" id="Tv4-sd-ngi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM4-JI-XnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Bw-Em-LXY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1519.2" y="-128.18590704647679"/>
         </scene>

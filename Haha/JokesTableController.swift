@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Joke {
+class Joke: NSObject {
     var title: String = ""
     var text: String = ""
     var id: String = ""
@@ -29,6 +29,7 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
     }
 
     var jokes = [Joke]()
+    var blockedJokeIDs: [String] = []
     var isFetching: Bool = false
     var currentFetchTask: URLSessionTask?
     var hasFailed: Bool = false
@@ -55,6 +56,16 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
         fetchJokes(true)
     }
     
+    @IBAction func unwindToJokesTable(segue: UIStoryboardSegue) {
+        let jokeView = segue.source as! JokeViewController
+        blockedJokeIDs.append(jokeView.joke!.id)
+        if let index = jokes.index(of: jokeView.joke!) {
+            jokes.remove(at: index)
+            let indexPath = NSIndexPath(row: index, section: 0)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+        }
+    }
+    
     @IBOutlet weak var adultContentSwitch: UISwitch!
     @IBOutlet weak var jokesCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var jokesTable: UITableView!
@@ -73,12 +84,14 @@ class JokesTableController: UITableViewController, ErrorCellDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setToolbarHidden(true, animated: true)
+        persistBlockedJokeIDs()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        restoreBlockedJokeIDs()
         fetchJokes(true)
         setUpJokesTable()
     }
@@ -174,6 +187,14 @@ extension JokesTableController {
 
 //Extension for all Jokes Data Model related code
 extension JokesTableController {
+    func persistBlockedJokeIDs() -> Void {
+        UserDefaults.standard.set(blockedJokeIDs, forKey: "BlockedJokeIDs")
+    }
+
+    func restoreBlockedJokeIDs() -> Void {
+        blockedJokeIDs += UserDefaults.standard.object(forKey: "BlockedJokeIDs") as? [String] ?? [String]()
+    }
+    
     func parse(json data: Data) -> [String: Any]? {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -208,7 +229,10 @@ extension JokesTableController {
             joke.id = jokeItem["id"] as! String
             joke.name = jokeItem["name"] as! String
             joke.score = jokeItem["score"] as! Int
-            jokes.append(joke)
+            
+            if (!blockedJokeIDs.contains(joke.id)) {
+                jokes.append(joke)
+            }
         }
         
         return jokes
