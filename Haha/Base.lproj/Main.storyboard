@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PFq-Dl-RJz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PFq-Dl-RJz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +24,14 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JokeCell" textLabel="jVN-3L-Eb1" style="IBUITableViewCellStyleDefault" id="n9J-1U-FUq">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n9J-1U-FUq" id="rDO-sR-6Yr">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jVN-3L-Eb1">
-                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -44,11 +47,16 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem title="more" id="LV6-WB-86c">
+                            <connections>
+                                <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="TJo-m8-zm7"/>
                         <barButtonItem title="Mature Content" style="plain" id="Sk9-2n-2hH"/>
                         <barButtonItem style="plain" id="cBB-BG-tAA">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yGC-8t-oRB">
-                                <rect key="frame" x="310" y="7" width="51" height="31"/>
+                                <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="adultContentSwitchToggled:" destination="REj-m7-v8o" eventType="valueChanged" id="G2j-1M-URr"/>
@@ -58,11 +66,6 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="LuS-Yz-e3l">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="more" id="LV6-WB-86c">
-                            <connections>
-                                <action selector="loadMore:" destination="REj-m7-v8o" id="Wwf-nC-4OX"/>
-                            </connections>
-                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DID-cr-8av">
                             <rect key="frame" x="98" y="7" width="179" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,6 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-PE-IJK">
+                                <rect key="frame" x="16" y="80" width="343" height="521"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -117,14 +121,29 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-OU-V7m">
+                                <rect key="frame" x="16" y="617" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Block">
+                                    <color key="titleColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="blockJoke:" destination="Rvx-4m-fnm" eventType="touchUpInside" id="zrW-fI-Len"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94464218619999996" green="0.956749022" blue="0.96912759540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="051-Xm-WHR"/>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="f22-Ad-1Sk"/>
-                            <constraint firstAttribute="trailing" secondItem="cbx-PE-IJK" secondAttribute="trailing" constant="16" id="ieF-ne-RSY"/>
-                            <constraint firstAttribute="bottom" secondItem="cbx-PE-IJK" secondAttribute="bottom" constant="20" id="lId-go-WHh"/>
-                            <constraint firstItem="cbx-PE-IJK" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" constant="20" id="pvB-BT-Bn0"/>
+                            <constraint firstItem="CcG-s2-ZK7" firstAttribute="top" secondItem="DJU-OU-V7m" secondAttribute="bottom" constant="16" id="BOf-cv-6tr"/>
+                            <constraint firstItem="DJU-OU-V7m" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="Fhd-EC-Idu"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="top" secondItem="hHk-J2-UOJ" secondAttribute="bottom" constant="16" id="dtk-Gv-cHz"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="leading" secondItem="B03-mP-Tvt" secondAttribute="leading" constant="16" id="i6Y-ML-ifs"/>
+                            <constraint firstAttribute="trailing" secondItem="DJU-OU-V7m" secondAttribute="trailing" constant="16" id="l4e-XK-M6w"/>
+                            <constraint firstItem="DJU-OU-V7m" firstAttribute="top" secondItem="cbx-PE-IJK" secondAttribute="bottom" constant="16" id="m7O-hX-wmH"/>
+                            <constraint firstItem="DJU-OU-V7m" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="p93-yz-I99"/>
+                            <constraint firstAttribute="trailing" secondItem="cbx-PE-IJK" secondAttribute="trailing" constant="16" id="pjw-t8-Fms"/>
+                            <constraint firstItem="DJU-OU-V7m" firstAttribute="top" secondItem="cbx-PE-IJK" secondAttribute="bottom" constant="16" id="yW2-z3-C42"/>
+                            <constraint firstItem="cbx-PE-IJK" firstAttribute="centerX" secondItem="B03-mP-Tvt" secondAttribute="centerX" id="zpk-aw-rce"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -135,7 +154,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="jokeView" destination="cbx-PE-IJK" id="dtV-yg-3Wv"/>
                     </connections>
@@ -154,6 +173,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Zcp-O5-aGq">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="REj-m7-v8o" kind="relationship" relationship="rootViewController" id="JjK-un-OYd"/>
                     </connections>
